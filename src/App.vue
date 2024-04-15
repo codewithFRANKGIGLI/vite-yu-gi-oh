@@ -20,10 +20,17 @@ export default {
 
   },
   methods: {
-    getCardsFromApi() {
-      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php')
+    getCardFromApi() {
+      const queryParams = {
+        startdate: '2000-01-01',
+        enddate: '2002-08-23',
+        dateregion: 'tcg'
+      }
+      axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php', {
+        params: queryParams
+      })
       .then((response) => {
-        store.cards = response.data;
+        store.cards = response.data.data;
         store.isLoading = false;
       });
     }
@@ -39,4 +46,6 @@ export default {
   <AppMain v-if="!store.isLoading"></AppMain>
 </template>
 
-<style></style>
+<style lang="scss">
+@use '../assets/scss/partials/app.scss';
+</style>

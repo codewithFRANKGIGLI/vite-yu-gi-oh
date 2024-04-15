@@ -3,9 +3,7 @@
 export default {
     name: 'Card',
     props: {
-        cardImage: String,
-        cardTitle: String,
-        cardArchetype: String,
+        cardInfo: Object
     },
     data() {
         return {
@@ -18,12 +16,12 @@ export default {
 <template>
     <div class="col p-2">
         <div class="card text-center">
-            <img :src="cardImage" alt="cardTitle">
+            <img :src="cardInfo.card_images[0].images_url_small" alt="cardInfo.name">
             <div class="body-card d-flex flex-column align-items-center justify-content-center p-3">
                 <div class="title text-white text-uppercase">
-                    {{ cardTitle }}
+                    {{ cardInfo.name }}
                 </div>
-                <div>{{ cardArchetype }}</div>
+                <div>{{ cardInfo.race }}</div>
             </div>
         </div>
         <!-- /.card -->

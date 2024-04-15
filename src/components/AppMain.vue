@@ -19,10 +19,10 @@ export default {
 </script>
 
 <template>
-    <section class="cards-list">
-        <div class="container">
-            <div class="card">
-                <Card></Card>
+    <section class="card-list">
+        <div class="container py-5">
+            <div class="row justify-content-center pb-3 g-3">
+                <Card v-for="card in store.cards" :key="card.id" :cardInfo="card"></Card>
             </div>
         </div>
     </section>

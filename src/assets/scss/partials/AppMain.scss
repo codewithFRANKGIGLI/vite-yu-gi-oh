@@ -1,5 +1,9 @@
 @use '../app.scss' as *;
 
-.card {
+.card-list {
     background-color: $ygo-primary;
+
+    .row {
+        background-color: $ygo-white;
+    }
 }
