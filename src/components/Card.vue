@@ -21,7 +21,7 @@ export default {
                 <div class="title text-white text-uppercase">
                     {{ cardInfo.name }}
                 </div>
-                <div>{{ cardInfo.race }}</div>
+                <div>{{ cardInfo.archetype }}</div>
             </div>
         </div>
         <!-- /.card -->
