@@ -1,6 +1,7 @@
 <script>
 import AppMain from './components/AppMain.vue';
 import AppHeader from './components/AppHeader.vue';
+import filterList from './components/filterList.vue';
 
 
 export default {
@@ -14,6 +15,7 @@ export default {
   components: {
     AppMain,
     AppHeader,
+    filterList
   }
 
 }

@@ -18,11 +18,6 @@ export default {
         }
     },
 
-    created() {
-        store;
-        archetype;
-    }
-
 }
 </script>
 
