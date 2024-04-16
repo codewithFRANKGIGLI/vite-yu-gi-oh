@@ -1,11 +1,15 @@
 <script>
 import { store } from '../store.js';
 import Card from './Card.vue';
+import filterList from './filterList.vue';
+import counterCardFound from './counterCardFound.vue';
 
 export default {
     name: 'AppMain',
     components: {
         Card,
+        filterList,
+        counterCardFound,
     },
     data() {
         return {
@@ -13,19 +17,42 @@ export default {
         }
     },
     methods: {
-        
-    }
+        searchArchetype() {
+            this.store;
+        }
+    },
+    created() {
+        store;
+    },
 }
 </script>
 
 <template>
-    <section class="card-list">
-        <div class="container py-5">
-            <div class="row justify-content-center pb-3 g-3">
-                <Card v-for="card in store.cards" :key="card.id" :cardInfo="card"></Card>
+    <main class="p-3">
+        <div v-if="store.cards" class="container">
+
+            <!-- FILTRAGGIO -->
+            <filterList @search-Filter="searchArchetype" />
+
+            <div class="container px-0 bg-white">
+
+                <!-- COUNTER -->
+                <div id="cards_found" class="p-2 text-white">
+                    <counterCardFound />
+                </div>
+
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 p-4">
+                    <Card v-for="card in store.cards" :cardImage="card.card_images[0].image_url" :cardTitle="card.name"
+                        :cardArchetype="card.archetype" :cardFound="store.cards.length" />
+                </div>
+                <!-- /.row -->
+
             </div>
         </div>
-    </section>
+        <!-- /.container -->
+
+        <div v-else>Loading</div>
+    </main>
 </template>
 
 <style lang="scss" scoped>

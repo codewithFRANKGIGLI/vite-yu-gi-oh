@@ -1,9 +1,13 @@
 @use '../app.scss' as *;
 
-.card-list {
+main {
     background-color: $ygo-primary;
 
-    .row {
-        background-color: $ygo-white;
+    .container {
+
+        #cards_found {
+            background-color: $ygo-dark;
+        }
+
     }
 }
