@@ -17,7 +17,7 @@ export default {
 
 
 <template>
-    <div class="pb-3">
+    <div class="container pb-3">
         <select name="choose_archetype" id="choose_archetype" @change="$emit('searchFilter')"
             v-model="store.archetypeSelected">
             <selectArchetype v-for="filter in store.listsArchetype" :type="filter.archetype_name" />
@@ -26,4 +26,6 @@ export default {
 </template>
 
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+@use '../assets/scss/partials/AppMain.scss' as *;
+</style>
